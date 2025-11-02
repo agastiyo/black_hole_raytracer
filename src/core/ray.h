@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <iostream>
 
-#include "vec3.h"
+#include "math/vec3.h"
 
 // Right now the rays are straight lines.
 // pos = dir*t + origin

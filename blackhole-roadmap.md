@@ -8,27 +8,21 @@ Build a specialized C++ raytracing engine that visualizes light bending around a
 
 ### 1.1 Vector Math Library
 
-- [ ] Create `src/math/vec3.h`
-- [ ] Implement `vec3` class with:
-  - [ ] Constructor: `vec3(double x, double y, double z)`
-  - [ ] Operator overloads: `+`, `-`, `*`, `/`
-  - [ ] Methods: `dot()`, `cross()`, `length()`, `squared_length()`, `unit_vector()`
-  - [ ] Utility: color conversion to PPM format
+- [x] Create `src/math/vec3.h`
+- [x] Implement `vec3` class with:
+  - [x] Constructor: `vec3(double x, double y, double z)`
+  - [x] Operator overloads: `+`, `-`, `*`, `/`
+  - [x] Methods: `dot()`, `cross()`, `length()`, `squared_length()`, `unit_vector()`
+  - [x] Utility: color conversion to PPM format
 
 ### 1.2 Ray Class
 
-- [ ] Create `src/core/ray.h`
-- [ ] Implement `ray` class with:
-  - [ ] Constructor: `ray(vec3 origin, vec3 direction)`
-  - [ ] Method: `point_at_parameter(double t)` returns origin + t * direction
+- [x] Create `src/core/ray.h`
+- [x] Implement `ray` class with:
+  - [x] Constructor: `ray(vec3 origin, vec3 direction)`
+  - [x] Method: `point_at_parameter(double t)` returns origin + t * direction
 
-### 1.3 PPM Output
-
-- [ ] Create `src/rendering/ppm_writer.h`
-- [ ] Implement PPM file writer function
-- [ ] Write pixels to file in format: P3 (ASCII PPM)
-
-### 1.4 Simple Camera
+### 1.3 Simple Camera
 
 - [ ] Create `src/core/camera.h`
 - [ ] Implement camera class with:
@@ -37,7 +31,7 @@ Build a specialized C++ raytracing engine that visualizes light bending around a
   - [ ] Method: `get_ray(double u, double v)` to cast rays through pixels
   - [ ] u, v normalized to [0, 1] from pixel coordinates
 
-### 1.5 Checkpoint: Gradient Image
+### 1.4 Checkpoint: Gradient Image
 
 - [ ] Create `src/main.cpp` main function
 - [ ] Cast rays and set pixel colors based on ray direction

@@ -1,9 +1,9 @@
 #include <iostream>
 #include <fstream>
 
-#include "classes/vec3.h"
-#include "classes/vec3ops.h"
-#include "classes/ray.h"
+#include "math/vec3.h"
+#include "math/vec3ops.h"
+#include "core/ray.h"
 
 using namespace std;
 
