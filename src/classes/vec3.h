@@ -1,6 +1,9 @@
+#ifndef VEC3_H
+#define VEC3_H
+
 #include <math.h>
 #include <stdlib.h>
-# include <iostream>
+#include <iostream>
 
 class vec3 {
   public:
@@ -19,21 +22,23 @@ class vec3 {
     inline double g() const { return _y; }
     inline double b() const { return _z; }
 
-    inline void set(double e0, double e1, double e2);
+    void set(double e0, double e1, double e2);
 
-    inline vec3& operator+=(const vec3 &v2);
-    inline vec3 &operator-=(const vec3 &v2);
-    inline vec3 &operator*=(const vec3 &v2);
-    inline vec3 &operator*=(const double s);
-    inline vec3 &operator/=(const vec3 &v2);
-    inline vec3 &operator/=(const double s);
+    vec3 &operator+=(const vec3 &v2);
+    vec3 &operator-=(const vec3 &v2);
+    vec3 &operator*=(const vec3 &v2);
+    vec3 &operator*=(const double s);
+    vec3 &operator/=(const vec3 &v2);
+    vec3 &operator/=(const double s);
 
-    inline double magnitude() const;
-    inline double magnitude_squared() const;
-    inline void make_unit_vector();
+    double magnitude() const;
+    double magnitude_squared() const;
+    void make_unit_vector();
 
   private:
     double _x;
     double _y;
     double _z;
 };
+
+#endif // VEC3_H
