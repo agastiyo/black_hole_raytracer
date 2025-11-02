@@ -1,5 +1,5 @@
 #include "ray.h"
-#include "vec3ops.h"
+#include "math/vec3ops.h"
 
 Ray::Ray(vec3 _origin, vec3 _direction) {
   origin = _origin;

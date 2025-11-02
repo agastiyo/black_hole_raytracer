@@ -4,6 +4,7 @@
 #include "math/vec3.h"
 #include "math/vec3ops.h"
 #include "core/ray.h"
+#include "core/camera.h"
 
 using namespace std;
 
@@ -43,15 +44,11 @@ int main() {
   int width = 400;
   int backgroundDist = 100;
 
-  // Define the lower left corner to start traversal of the screen
-  vec3 lower_left_corner(-width/200,-height/200,-backgroundDist/100);
-
-  vec3 horizontal(width/100,0,0); // Width of screen
-  vec3 vertical(0,height/100,0); // Height of screen
-  vec3 origin(0,0,0);
-
   // Set up PPM file
   output_file << "P3\n" << width << " " << height << "\n255\n";
+
+  // Set up camera
+  Camera cam(120, double(width)/double(height));
 
   // Write to PPM file
   for (int j = height-1; j >= 0; j--) {
@@ -59,7 +56,7 @@ int main() {
       double u = double(i) / double(width);
       double v = double(j) / double(height);
 
-      Ray r(origin, lower_left_corner + u*horizontal + v*vertical);
+      Ray r(cam.getOrigin(), cam.getLowerLeft() + u*cam.getHorizontal() + v*cam.getVertical());
       vec3 col = color(r);
 
       int ir = int(255.99*col.r());
