@@ -24,19 +24,19 @@ Build a specialized C++ raytracing engine that visualizes light bending around a
 
 ### 1.3 Simple Camera
 
-- [ ] Create `src/core/camera.h`
-- [ ] Implement camera class with:
-  - [ ] Fixed position (e.g., origin at z=0)
-  - [ ] Field of view
-  - [ ] Method: `get_ray(double u, double v)` to cast rays through pixels
-  - [ ] u, v normalized to [0, 1] from pixel coordinates
+- [x] Create `src/core/camera.h`
+- [x] Implement camera class with:
+  - [x] Fixed position (e.g., origin at z=0)
+  - [x] Field of view
+  - [x] Method: `get_ray(double u, double v)` to cast rays through pixels
 
 ### 1.4 Checkpoint: Gradient Image
 
-- [ ] Create `src/main.cpp` main function
-- [ ] Cast rays and set pixel colors based on ray direction
-- [ ] Output 200×100 gradient test image to `output/test_gradient.ppm`
-- [ ] View in Preview/image viewer—should show smooth color gradient
+- [x] Create `src/main.cpp` main function
+- [x] Cast rays and set pixel colors based on ray direction
+- [x] Output gradient test image to `output/image.ppm`
+- [x] View in Preview/image viewer—should show smooth color gradient
+- [x] Extra: added a sphere in there just because
 
 ---
 
@@ -44,16 +44,14 @@ Build a specialized C++ raytracing engine that visualizes light bending around a
 
 ### 2.1 Schwarzschild Metric Implementation
 
-- [ ] Create `src/physics/SchwarzschildMetric.h`
+- [x] Create `src/physics/SchwarzschildMetric.h`
 - [ ] Implement class with:
-  - [ ] Constructor: `SchwarzschildMetric(double mass)` where mass is black hole mass M
-  - [ ] Method: `get_metric_tensor(double r, double theta)` returns 4×4 metric tensor components
-    - Only store non-zero diagonal elements for Schwarzschild (faster)
-    - Components: g_tt, g_rr, g_theta_theta, g_phi_phi
+  - [x] Constructor: `SchwarzschildMetric(double mass)` where mass is black hole mass M
+  - [x] Method: `get_metric_tensor(int mu, int nu, double r, double theta)` returns scalar
+  - [x] Method: `get_inverse_metric_tensor(int mu, int nu, double r, double theta)` returns scalar
   - [ ] Method: `get_christoffel_symbol(double r, double theta, int mu, int nu, int lambda)` returns scalar
-    - Pre-compute and hardcode Christoffel symbols for Schwarzschild (find online or derive)
-  - [ ] Method: `delta(double r)` returns r² - 2M*r (used for step-size control)
-  - [ ] Method: `event_horizon_radius()` returns 2M
+  - [x] Method: `delta(double r)` returns r² - 2M*r (used for step-size control)
+  - [x] Method: `event_horizon_radius()` returns 2M
 
 ### 2.2 4-Momentum Initialization
 
