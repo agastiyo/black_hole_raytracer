@@ -45,11 +45,11 @@ Build a specialized C++ raytracing engine that visualizes light bending around a
 ### 2.1 Schwarzschild Metric Implementation
 
 - [x] Create `src/physics/SchwarzschildMetric.h`
-- [ ] Implement class with:
+- [x] Implement class with:
   - [x] Constructor: `SchwarzschildMetric(double mass)` where mass is black hole mass M
   - [x] Method: `get_metric_tensor(int mu, int nu, double r, double theta)` returns scalar
   - [x] Method: `get_inverse_metric_tensor(int mu, int nu, double r, double theta)` returns scalar
-  - [ ] Method: `get_christoffel_symbol(double r, double theta, int mu, int nu, int lambda)` returns scalar
+  - [x] Method: `get_christoffel_symbol(double r, double theta, int mu, int nu, int lambda)` returns scalar
   - [x] Method: `delta(double r)` returns r² - 2M*r (used for step-size control)
   - [x] Method: `event_horizon_radius()` returns 2M
 

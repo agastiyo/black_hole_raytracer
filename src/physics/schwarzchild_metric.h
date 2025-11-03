@@ -6,6 +6,7 @@ class SchwarzchildMetric {
 
     double g(int mu, int nu, double r, double theta);
     double g_inv(int mu, int nu, double r, double theta);
+    double dg(int mu, int nu, double r, double theta, int a);
     double affine(int mu, int nu, int lambda, double r, double theta);
 
     inline double delta(double r) { return r*r - 2*M*r; }
